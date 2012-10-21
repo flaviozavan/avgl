@@ -1,0 +1,34 @@
+avgl is a simple tv viewer for Linux. It uses SDL, v4l and OpenGL. It's primary
+goal is to display the image captured by EasyCap cards on the screen with the
+shortest delay possible, enabling users to play video games using their cards.
+
+avgl does not support sound, it is recommended to plug directly into the sound
+card's microphone in and use alsamixer to unmute the microphone, as alsa
+introduces a considerable delay when getting the audio through the capture
+card.
+
+Because playing video games only uses the rca or the s-video connectors, avgl
+does not support channel switching or anything that is not necessary to just
+play video games.
+
+$ avgl -h
+Usage: avgl [OPTION]...
+
+    -D    specify the video device to use (i.e. /dev/video0)
+    -c    auto contrast correction
+    -f    fullscreen mode
+    -h    show this message
+    -H    specify the video height
+    -i    specify the video input (i.e. 0)
+    -l    use bilinear interpolation
+    -Q    query inputs, standards, formats and sizes
+    -r    disable window resize
+    -s    specify the standard (i.e. 0x1000 for NTSC)
+    -S    initial window scaling (must be an integer)
+    -v    verbose
+    -w    specify video width
+
+
+Here's an example of how you might want to run avgl:
+
+$ avgl -S 1 -w 720 -H 480 -r -c -D /dev/video0
